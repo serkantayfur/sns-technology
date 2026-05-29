@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNS Technology | LED Wall, VoIP & IT Solutions</title>
+<meta name="description" content="SNS Technology delivers cutting-edge LED Wall installations, VoIP phone systems, IT solutions, and audio-visual systems across the USA. Turnkey setup, expert support.">
+<meta name="keywords" content="LED wall installation, VoIP phone systems, IT solutions, audio visual systems, restaurant LED display, sports bar LED wall, SNS Technology">
+<meta property="og:title" content="SNS Technology | LED Wall & Technology Solutions">
+<meta property="og:description" content="Turnkey LED Wall, VoIP, IT & AV solutions for restaurants, businesses and venues across the USA.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.sns-technology.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"SNS Technology","url":"https://www.sns-technology.com","description":"LED Wall installations, VoIP phone systems, IT solutions and audio-visual systems","serviceArea":{"@type":"Country","name":"United States"}}
+</script>
+<style>
+  :root {
+    --bg:#080A0F; --bg2:#0D1017; --bg3:#12161F; --panel:#161B26;
+    --border:rgba(255,255,255,0.07); --border2:rgba(255,255,255,0.12);
+    --accent:#00E5FF; --accent2:#0066FF; --accent3:#7B2FFF; --gold:#FFB800;
+    --text:#F0F2F7; --muted:#6B7591; --muted2:#9BA3BC;
+    --font-head:'Syne',sans-serif; --font-body:'DM Sans',sans-serif;
+    --radius:12px; --radius-lg:20px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:70px;background:rgba(8,10,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--muted2);text-decoration:none;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{background:var(--accent)!important;color:#000!important;padding:9px 20px;border-radius:8px;font-weight:700!important;font-size:12px!important;transition:opacity .2s!important}
+  .nav-cta:hover{opacity:.85}
+
+  /* HERO */
+  #hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:100px 5% 60px}
+
+  /* ANIMATED LED WALL BACKGROUND */
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .led-canvas{position:absolute;inset:0;width:100%;height:100%}
+
+  /* FLOATING 3D LED PANEL */
+  .hero-visual{
+    position:absolute;right:-2%;top:50%;transform:translateY(-50%);
+    width:52%;max-width:720px;z-index:1;
+    animation:floatPanel 6s ease-in-out infinite;
+  }
+  @keyframes floatPanel{0%,100%{transform:translateY(-50%) rotate(-2deg)}50%{transform:translateY(-53%) rotate(-1deg)}}
+
+  .led-panel-wrap{
+    position:relative;width:100%;padding-bottom:62%;
+    border-radius:18px;overflow:hidden;
+    box-shadow:
+      0 0 0 1px rgba(0,229,255,0.15),
+      0 0 60px rgba(0,102,255,0.25),
+      0 40px 80px rgba(0,0,0,0.6),
+      inset 0 0 40px rgba(0,229,255,0.05);
+  }
+  .led-panel-inner{
+    position:absolute;inset:0;
+    background:linear-gradient(135deg,#0a0e1a 0%,#0d1220 50%,#080c18 100%);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+
+  /* LED PIXEL GRID ON PANEL */
+  .pixel-grid{
+    position:absolute;inset:0;
+    background-image:radial-gradient(circle,rgba(0,229,255,0.35) 1px,transparent 1px);
+    background-size:18px 18px;
+    animation:pixelShift 8s linear infinite;
+    opacity:0.6;
+  }
+  @keyframes pixelShift{0%{background-position:0 0}100%{background-position:18px 18px}}
+
+  /* SCREEN CONTENT DISPLAYED ON LED WALL */
+  .panel-screen{
+    position:relative;z-index:2;text-align:center;padding:20px;
+  }
+  .panel-match{
+    font-family:var(--font-head);font-size:clamp(18px,3vw,38px);font-weight:800;
+    color:#fff;letter-spacing:-0.02em;line-height:1;
+    text-shadow:0 0 30px rgba(0,229,255,0.8),0 0 60px rgba(0,102,255,0.5);
+  }
+  .panel-score{
+    font-family:var(--font-head);font-size:clamp(40px,7vw,100px);font-weight:800;
+    color:var(--accent);letter-spacing:-0.04em;line-height:1;margin:8px 0;
+    text-shadow:0 0 40px rgba(0,229,255,0.9),0 0 80px rgba(0,229,255,0.5);
+    animation:scorePulse 2s ease-in-out infinite;
+  }
+  @keyframes scorePulse{0%,100%{text-shadow:0 0 40px rgba(0,229,255,0.9),0 0 80px rgba(0,229,255,0.5)}50%{text-shadow:0 0 60px rgba(0,229,255,1),0 0 120px rgba(0,229,255,0.7),0 0 160px rgba(0,102,255,0.4)}}
+  .panel-teams{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:10px}
+  .panel-flag{font-size:clamp(24px,3.5vw,48px)}
+  .panel-vs{font-size:clamp(10px,1.5vw,16px);color:var(--muted2);font-weight:600;letter-spacing:.1em}
+  .panel-label{
+    font-size:clamp(8px,1.2vw,13px);color:rgba(0,229,255,0.7);
+    text-transform:uppercase;letter-spacing:.12em;font-weight:600;
+    margin-top:8px;
+  }
+  .panel-bar{
+    width:80%;margin:12px auto 0;height:3px;
+    background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;
+  }
+  .panel-bar-fill{
+    height:100%;width:0;border-radius:2px;
+    background:linear-gradient(90deg,var(--accent2),var(--accent));
+    animation:barFill 3s 1s ease forwards;
+  }
+  @keyframes barFill{to{width:72%}}
+
+  /* PANEL FRAME */
+  .panel-frame-top,.panel-frame-bottom{
+    position:absolute;left:0;right:0;height:28px;z-index:3;
+    display:flex;align-items:center;
+  }
+  .panel-frame-top{top:0;background:linear-gradient(180deg,rgba(0,10,30,0.9),transparent);padding:6px 14px;gap:6px}
+  .panel-frame-bottom{bottom:0;background:linear-gradient(0deg,rgba(0,10,30,0.9),transparent);padding:6px 14px;justify-content:flex-end}
+  .panel-dot{width:6px;height:6px;border-radius:50%}
+  .pd1{background:#ff4444;animation:blinkDot 2s infinite}
+  .pd2{background:var(--gold);animation:blinkDot 2s .3s infinite}
+  .pd3{background:#00ff88;animation:blinkDot 2s .6s infinite}
+  @keyframes blinkDot{0%,100%{opacity:1}50%{opacity:0.4}}
+  .panel-brand{font-size:9px;color:rgba(0,229,255,0.5);letter-spacing:.1em;text-transform:uppercase;font-family:var(--font-head);font-weight:700}
+
+  /* PANEL GLOW EDGE */
+  .panel-glow-left,.panel-glow-right{
+    position:absolute;top:0;bottom:0;width:3px;z-index:4;
+    background:linear-gradient(180deg,transparent,var(--accent),transparent);
+    animation:glowEdge 3s ease-in-out infinite;
+  }
+  .panel-glow-left{left:0}
+  .panel-glow-right{right:0;animation-delay:1.5s}
+  @keyframes glowEdge{0%,100%{opacity:0.3}50%{opacity:1}}
+
+  /* REFLECTION BELOW PANEL */
+  .panel-reflection{
+    position:absolute;bottom:-30px;left:10%;right:10%;height:30px;
+    background:radial-gradient(ellipse,rgba(0,229,255,0.15) 0%,transparent 70%);
+    filter:blur(8px);
+  }
+
+  /* FLOATING TAGS */
+  .float-tag{
+    position:absolute;background:var(--panel);border:1px solid var(--border2);
+    border-radius:12px;padding:10px 16px;display:flex;align-items:center;gap:10px;
+    font-size:13px;font-weight:500;white-space:nowrap;z-index:2;
+    box-shadow:0 8px 32px rgba(0,0,0,0.4);
+  }
+  .ft1{top:8%;left:48%;animation:floatTag1 5s ease-in-out infinite}
+  .ft2{bottom:20%;left:50%;animation:floatTag2 5s 1s ease-in-out infinite}
+  .ft3{top:30%;right:2%;animation:floatTag3 5s 2s ease-in-out infinite}
+  @keyframes floatTag1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @keyframes floatTag2{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+  @keyframes floatTag3{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .ft-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .ft-green{background:#00FF88}
+  .ft-cyan{background:var(--accent)}
+  .ft-gold{background:var(--gold)}
+
+  /* HERO TEXT SIDE */
+  .hero-text{position:relative;z-index:2;max-width:540px;flex-shrink:0}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(0,229,255,0.08);border:1px solid rgba(0,229,255,0.2);
+    border-radius:100px;padding:6px 16px;
+    font-size:12px;font-weight:500;color:var(--accent);
+    letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px;
+    animation:fadeUp .6s ease both;
+  }
+  .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+  h1{font-family:var(--font-head);font-size:clamp(38px,4.5vw,72px);font-weight:800;line-height:1.0;letter-spacing:-0.03em;animation:fadeUp .7s .1s ease both}
+  h1 .grad{color:transparent;background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 50%,var(--accent3) 100%);-webkit-background-clip:text;background-clip:text}
+  .hero-sub{margin-top:22px;font-size:17px;color:var(--muted2);line-height:1.7;animation:fadeUp .7s .2s ease both}
+  .hero-btns{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;animation:fadeUp .7s .3s ease both}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#000;font-family:var(--font-head);font-weight:700;font-size:14px;padding:14px 28px;border-radius:10px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 0 30px rgba(0,229,255,0.3)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,229,255,0.5)}
+  .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);font-family:var(--font-head);font-weight:600;font-size:14px;padding:14px 28px;border-radius:10px;text-decoration:none;border:1px solid var(--border2);transition:border-color .2s,background .2s}
+  .btn-secondary:hover{border-color:var(--accent);background:rgba(0,229,255,0.05)}
+
+  .hero-stats{display:flex;gap:36px;margin-top:52px;flex-wrap:wrap;animation:fadeUp .7s .4s ease both}
+  .stat{text-align:left}
+  .stat-num{font-family:var(--font-head);font-size:32px;font-weight:800;color:var(--text);letter-spacing:-0.03em}
+  .stat-num span{color:var(--accent)}
+  .stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+
+  /* GRID BG */
+  .hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 100% 100% at 50% 50%,black 20%,transparent 100%)}
+  .hero-glow{position:absolute;top:0;left:0;width:60%;height:100%;background:radial-gradient(ellipse at 20% 50%,rgba(0,102,255,0.12) 0%,rgba(123,47,255,0.08) 40%,transparent 70%);pointer-events:none;z-index:0}
+
+  /* SECTIONS */
+  section{position:relative;z-index:1}
+  .section-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+  .section-title{font-family:var(--font-head);font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-0.02em;line-height:1.1}
+  .section-sub{font-size:17px;color:var(--muted2);max-width:520px;margin-top:14px;line-height:1.7}
+
+  /* SERVICES */
+  #services{padding:100px 5%}
+  .services-head{text-align:center;margin-bottom:64px}
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden}
+  .service-card{background:var(--bg2);padding:40px 36px;transition:background .3s;position:relative;overflow:hidden}
+  .service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,255,0.05) 0%,transparent 60%);opacity:0;transition:opacity .3s}
+  .service-card:hover{background:var(--bg3)}
+  .service-card:hover::before{opacity:1}
+  .service-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:24px}
+  .si-blue{background:rgba(0,102,255,0.15)}
+  .si-cyan{background:rgba(0,229,255,0.12)}
+  .si-purple{background:rgba(123,47,255,0.15)}
+  .si-gold{background:rgba(255,184,0,0.12)}
+  .service-card h3{font-family:var(--font-head);font-size:20px;font-weight:700;margin-bottom:12px;letter-spacing:-0.01em}
+  .service-card p{font-size:14px;color:var(--muted2);line-height:1.7}
+  .service-features{margin-top:20px;display:flex;flex-direction:column;gap:8px}
+  .sf{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted2)}
+  .sf::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+
+  /* WORLD CUP */
+  #worldcup{margin:0 5%;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(0,102,255,0.15) 0%,rgba(123,47,255,0.15) 50%,rgba(0,229,255,0.10) 100%);border:1px solid rgba(0,229,255,0.2);padding:60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;overflow:hidden;position:relative;z-index:1}
+  #worldcup::before{content:'⚽';position:absolute;right:80px;top:50%;transform:translateY(-50%);font-size:140px;opacity:.07}
+  .wc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,184,0,0.15);border:1px solid rgba(255,184,0,0.3);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+  .wc-title{font-family:var(--font-head);font-size:32px;font-weight:800;letter-spacing:-0.02em;line-height:1.1}
+  .wc-title span{color:var(--accent)}
+  .wc-desc{font-size:15px;color:var(--muted2);margin-top:12px;max-width:480px;line-height:1.7}
+  .wc-dates{display:flex;gap:24px;margin-top:24px;flex-wrap:wrap}
+  .wc-date-num{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--gold)}
+  .wc-date-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+
+  /* WHY */
+  #why{padding:100px 5%}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .why-items{display:flex;flex-direction:column;gap:32px;margin-top:40px}
+  .why-item{display:flex;gap:20px}
+  .why-num{font-family:var(--font-head);font-size:13px;font-weight:800;color:var(--accent);opacity:.5;width:28px;flex-shrink:0;padding-top:2px}
+  .why-item h4{font-family:var(--font-head);font-size:17px;font-weight:700;margin-bottom:6px}
+  .why-item p{font-size:14px;color:var(--muted2);line-height:1.7}
+  .why-visual{background:var(--panel);border-radius:var(--radius-lg);border:1px solid var(--border);padding:40px;display:flex;flex-direction:column;gap:16px}
+  .why-visual-title{font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+  .metric{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--bg2);border-radius:10px;border:1px solid var(--border)}
+  .metric-label{font-size:13px;color:var(--muted2)}
+  .metric-val{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--accent)}
+  .metric-bar{height:4px;background:var(--border);border-radius:2px;margin-top:8px;overflow:hidden}
+  .metric-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent2),var(--accent))}
+
+  /* CONTACT */
+  #contact{padding:100px 5%}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .form-card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius-lg);padding:44px 40px}
+  .form-title{font-family:var(--font-head);font-size:22px;font-weight:700;margin-bottom:6px}
+  .form-sub{font-size:14px;color:var(--muted2);margin-bottom:32px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+  .field label{font-size:12px;font-weight:500;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em}
+  .field input,.field select,.field textarea{background:var(--bg2);border:1px solid var(--border2);border-radius:8px;padding:12px 16px;font-size:14px;color:var(--text);font-family:var(--font-body);outline:none;transition:border-color .2s;width:100%}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent)}
+  .field select option{background:var(--bg2)}
+  .field textarea{resize:vertical;min-height:90px}
+  .submit-btn{width:100%;padding:14px;margin-top:6px;background:var(--accent);color:#000;font-family:var(--font-head);font-weight:700;font-size:15px;border:none;border-radius:10px;cursor:pointer;transition:opacity .2s,transform .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+  .submit-btn:hover{opacity:.9;transform:translateY(-1px)}
+  .contact-info{display:flex;flex-direction:column;gap:28px;margin-top:12px}
+  .contact-item{display:flex;gap:18px;align-items:flex-start}
+  .contact-icon{width:44px;height:44px;border-radius:12px;background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+  .contact-item h4{font-size:14px;font-weight:600;margin-bottom:3px}
+  .contact-item p{font-size:14px;color:var(--muted2)}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);padding:40px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .footer-logo-wrap{display:flex;align-items:center;gap:10px}
+  footer p{font-size:13px;color:var(--muted)}
+  .footer-links{display:flex;gap:24px}
+  .footer-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+  .footer-links a:hover{color:var(--text)}
+
+  /* CHAT */
+  #chat-fab{position:fixed;bottom:28px;right:28px;z-index:200;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(0,229,255,0.35);transition:transform .2s,box-shadow .2s;font-size:24px}
+  #chat-fab:hover{transform:scale(1.08);box-shadow:0 12px 40px rgba(0,229,255,0.5)}
+  #chat-fab .notif{position:absolute;top:-2px;right:-2px;width:18px;height:18px;border-radius:50%;background:#FF4444;border:2px solid var(--bg);font-size:10px;font-weight:700;color:#fff;display:none;align-items:center;justify-content:center}
+  #chat-window{position:fixed;bottom:100px;right:28px;z-index:200;width:380px;max-height:560px;background:var(--panel);border:1px solid var(--border2);border-radius:20px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.6);display:none;flex-direction:column;animation:chatIn .25s ease}
+  @keyframes chatIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+  #chat-window.open{display:flex}
+  .chat-header{padding:18px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(0,102,255,0.15),rgba(0,229,255,0.08))}
+  .chat-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+  .chat-header-info h4{font-size:14px;font-weight:700}
+  .chat-header-info p{font-size:11px;color:var(--accent)}
+  .chat-lang-btns{margin-left:auto;display:flex;gap:4px}
+  .lang-btn{background:rgba(255,255,255,0.08);border:1px solid var(--border2);border-radius:6px;padding:3px 7px;font-size:10px;font-weight:600;color:var(--muted2);cursor:pointer;transition:all .15s}
+  .lang-btn.active{background:var(--accent);color:#000;border-color:var(--accent)}
+  .chat-close{background:none;border:none;color:var(--muted2);font-size:18px;cursor:pointer;margin-left:8px}
+  .chat-messages{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;max-height:320px;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+  .msg{max-width:85%;display:flex;flex-direction:column;gap:4px}
+  .msg.bot{align-self:flex-start}
+  .msg.user{align-self:flex-end}
+  .msg-bubble{padding:11px 15px;border-radius:14px;font-size:13px;line-height:1.55}
+  .msg.bot .msg-bubble{background:var(--bg2);border:1px solid var(--border);color:var(--text);border-bottom-left-radius:4px}
+  .msg.user .msg-bubble{background:linear-gradient(135deg,var(--accent2),var(--accent3));color:#fff;border-bottom-right-radius:4px}
+  .msg-time{font-size:10px;color:var(--muted);padding:0 4px}
+  .msg.user .msg-time{text-align:right}
+  .quick-replies{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+  .qr{background:transparent;border:1px solid rgba(0,229,255,0.3);border-radius:20px;padding:5px 12px;font-size:12px;color:var(--accent);cursor:pointer;transition:all .15s;font-family:var(--font-body)}
+  .qr:hover{background:rgba(0,229,255,0.1)}
+  .dot-typing{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:dotBounce 1.2s infinite;display:inline-block;margin:0 2px}
+  .dot-typing:nth-child(2){animation-delay:.2s}
+  .dot-typing:nth-child(3){animation-delay:.4s}
+  @keyframes dotBounce{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+  .chat-input-row{padding:14px 16px;border-top:1px solid var(--border);display:flex;gap:8px;align-items:flex-end;background:var(--bg2)}
+  .chat-input{flex:1;background:var(--panel);border:1px solid var(--border2);border-radius:10px;padding:10px 14px;font-size:13px;color:var(--text);outline:none;font-family:var(--font-body);resize:none;max-height:80px;transition:border-color .2s}
+  .chat-input:focus{border-color:var(--accent)}
+  .chat-send{width:38px;height:38px;border-radius:10px;flex-shrink:0;background:var(--accent);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:opacity .2s}
+  .chat-send:hover{opacity:.85}
+
+  /* LEAD POPUP */
+  #lead-popup{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}
+  #lead-popup.show{display:flex}
+  .lead-card{background:var(--panel);border:1px solid var(--border2);border-radius:24px;padding:44px 40px;max-width:440px;width:100%;position:relative;animation:chatIn .3s ease}
+  .lead-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted2);font-size:20px;cursor:pointer}
+  .lead-icon{font-size:40px;margin-bottom:16px}
+  .lead-title{font-family:var(--font-head);font-size:24px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px}
+  .lead-sub{font-size:14px;color:var(--muted2);margin-bottom:28px;line-height:1.6}
+  #success-msg{display:none;text-align:center;padding:20px}
+  #success-msg h3{font-family:var(--font-head);font-size:20px;margin:12px 0 8px}
+  #success-msg p{font-size:14px;color:var(--muted2)}
+
+  @media(max-width:900px){
+    .hero-visual{display:none}
+    #hero{text-align:center}
+    .hero-btns{justify-content:center}
+    .hero-stats{justify-content:center}
+    .why-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+    #worldcup{padding:40px 28px}
+    #worldcup::before{display:none}
+    .form-row{grid-template-columns:1fr}
+    #chat-window{width:calc(100vw - 32px);right:16px;bottom:90px}
+    .float-tag{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <!-- SNS TECHNOLOGY LOGO SVG -->
+    <svg width="140" height="36" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Icon mark: 3 LED pixels -->
+      <rect x="0" y="8" width="9" height="9" rx="2" fill="#00E5FF"/>
+      <rect x="11" y="8" width="9" height="9" rx="2" fill="#0066FF" opacity="0.8"/>
+      <rect x="5.5" y="19" width="9" height="9" rx="2" fill="#7B2FFF" opacity="0.7"/>
+      <!-- SNS wordmark -->
+      <text x="28" y="25" font-family="Syne, sans-serif" font-weight="800" font-size="18" fill="#F0F2F7" letter-spacing="-0.5">SNS</text>
+      <!-- divider -->
+      <rect x="70" y="10" width="1" height="16" fill="rgba(255,255,255,0.15)" rx="1"/>
+      <!-- TECHNOLOGY -->
+      <text x="77" y="24" font-family="Syne, sans-serif" font-weight="500" font-size="10.5" fill="#9BA3BC" letter-spacing="1.5">TECHNOLOGY</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-cta">Get Free Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+
+  <!-- TEXT -->
+  <div class="hero-text">
+    <div class="hero-badge">🏆 FIFA World Cup 2026 — Get Ready</div>
+    <h1>Technology<br>That <span class="grad">Transforms</span><br>Spaces</h1>
+    <p class="hero-sub">LED Wall installations, VoIP systems, IT solutions & AV technology — turnkey setup across the USA. We handle everything.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get Free Consultation →</a>
+      <a href="#services" class="btn-secondary">Explore Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">500<span>+</span></div><div class="stat-label">Installations</div></div>
+      <div class="stat"><div class="stat-num">48<span>h</span></div><div class="stat-label">Setup Time</div></div>
+      <div class="stat"><div class="stat-num">11</div><div class="stat-label">US Cities</div></div>
+      <div class="stat"><div class="stat-num">24<span>/7</span></div><div class="stat-label">Support</div></div>
+    </div>
+  </div>
+
+  <!-- LED WALL VISUAL -->
+  <div class="hero-visual">
+    <div class="led-panel-wrap">
+      <div class="led-panel-inner">
+        <div class="pixel-grid"></div>
+        <!-- TOP BAR -->
+        <div class="panel-frame-top">
+          <div class="panel-dot pd1"></div>
+          <div class="panel-dot pd2"></div>
+          <div class="panel-dot pd3"></div>
+        </div>
+        <!-- SCREEN CONTENT -->
+        <div class="panel-screen">
+          <div class="panel-teams">
+            <div class="panel-flag">🇹🇷</div>
+            <div class="panel-vs">VS</div>
+            <div class="panel-flag">🇺🇸</div>
+          </div>
+          <div class="panel-match">WORLD CUP 2026</div>
+          <div class="panel-score" id="scoreDisplay">2 — 1</div>
+          <div class="panel-label">⚽ 73' — LIVE</div>
+          <div class="panel-bar"><div class="panel-bar-fill"></div></div>
+        </div>
+        <!-- BOTTOM BAR -->
+        <div class="panel-frame-bottom">
+          <div class="panel-brand">SNS TECHNOLOGY</div>
+        </div>
+        <!-- EDGE GLOWS -->
+        <div class="panel-glow-left"></div>
+        <div class="panel-glow-right"></div>
+      </div>
+    </div>
+    <div class="panel-reflection"></div>
+
+    <!-- FLOATING TAGS -->
+    <div class="float-tag ft1">
+      <div class="ft-dot ft-green"></div>
+      <span style="font-size:12px;color:var(--muted2)">Installed & Live</span>
+    </div>
+    <div class="float-tag ft2">
+      <div class="ft-dot ft-cyan"></div>
+      <span style="font-size:12px;color:var(--muted2)">4K LED · 800 nits</span>
+    </div>
+    <div class="float-tag ft3">
+      <div class="ft-dot ft-gold"></div>
+      <span style="font-size:12px;color:var(--muted2)">Turnkey Setup</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-head">
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">End-to-End Technology Solutions</h2>
+    <p class="section-sub" style="margin:0 auto">From concept to installation — we deliver and support every piece of technology your business needs.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon si-cyan">📺</div>
+      <h3>LED Wall Systems</h3>
+      <p>Custom LED wall installations for restaurants, sports bars, retail & venues. Any size, any shape — we design and install it.</p>
+      <div class="service-features">
+        <div class="sf">Indoor & outdoor solutions</div>
+        <div class="sf">Custom sizing & pixel pitch</div>
+        <div class="sf">Content management system</div>
+        <div class="sf">FIFA World Cup 2026 ready</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon si-blue">📞</div>
+      <h3>VoIP Phone Systems</h3>
+      <p>Modern cloud-based phone systems that cut costs and improve communication. Perfect for businesses of any size.</p>
+      <div class="service-features">
+        <div class="sf">Cloud PBX & auto-attendant</div>
+        <div class="sf">Mobile & desktop apps</div>
+        <div class="sf">Call recording & analytics</div>
+        <div class="sf">Easy number porting</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon si-purple">🖥️</div>
+      <h3>IT Solutions</h3>
+      <p>Comprehensive IT infrastructure, networking, security and managed services for modern businesses.</p>
+      <div class="service-features">
+        <div class="sf">Network setup & security</div>
+        <div class="sf">Cloud migration</div>
+        <div class="sf">Managed IT support</div>
+        <div class="sf">Cybersecurity solutions</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon si-gold">🎵</div>
+      <h3>Audio Visual Systems</h3>
+      <p>Professional AV solutions — from boardroom displays to full venue sound systems. Seamlessly integrated.</p>
+      <div class="service-features">
+        <div class="sf">Commercial sound systems</div>
+        <div class="sf">Video conferencing setup</div>
+        <div class="sf">Digital signage</div>
+        <div class="sf">Smart control systems</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORLD CUP BANNER -->
+<div id="worldcup">
+  <div class="wc-left" style="flex:1;min-width:280px">
+    <div class="wc-badge">⚡ Limited Time Opportunity</div>
+    <div class="wc-title">FIFA World Cup 2026<br><span>is Coming to the USA</span></div>
+    <div class="wc-desc">39 days. 104 matches. Millions of fans looking for the best place to watch. Install your LED wall before June 11 and maximize every match night.</div>
+    <div class="wc-dates">
+      <div class="wc-date"><div class="wc-date-num">Jun 11</div><div class="wc-date-label">Starts</div></div>
+      <div class="wc-date"><div class="wc-date-num">104</div><div class="wc-date-label">Matches</div></div>
+      <div class="wc-date"><div class="wc-date-num">Jul 19</div><div class="wc-date-label">Final</div></div>
+      <div class="wc-date"><div class="wc-date-num">🇹🇷</div><div class="wc-date-label">Türkiye Plays!</div></div>
+    </div>
+    <div style="margin-top:28px"><a href="#contact" class="btn-primary" style="display:inline-flex">Book Free Assessment →</a></div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="why-grid">
+    <div>
+      <div class="section-tag">Why SNS Technology</div>
+      <h2 class="section-title">We Don't Just Sell — We Build & Support</h2>
+      <div class="why-items">
+        <div class="why-item"><div class="why-num">01</div><div><h4>Turnkey Installation</h4><p>From site assessment to go-live, our certified technicians handle every step. Zero technical knowledge required.</p></div></div>
+        <div class="why-item"><div class="why-num">02</div><div><h4>Trilingual Support</h4><p>We serve English, Turkish and Spanish-speaking clients with dedicated support in all three languages.</p></div></div>
+        <div class="why-item"><div class="why-num">03</div><div><h4>USA-Wide Coverage</h4><p>Operating across all 11 FIFA World Cup 2026 host cities and beyond. Wherever you are, we're there.</p></div></div>
+        <div class="why-item"><div class="why-num">04</div><div><h4>Fast ROI</h4><p>Most LED wall clients recover their investment within 6–12 months through increased foot traffic and revenue.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="why-visual">
+        <div class="why-visual-title">Client Performance</div>
+        <div class="metric"><div><div class="metric-label">Revenue increase on match nights</div><div class="metric-bar"><div class="metric-fill" style="width:87%"></div></div></div><div class="metric-val">+87%</div></div>
+        <div class="metric"><div><div class="metric-label">Customer satisfaction score</div><div class="metric-bar"><div class="metric-fill" style="width:96%"></div></div></div><div class="metric-val">96%</div></div>
+        <div class="metric"><div><div class="metric-label">Average ROI timeline</div><div class="metric-bar"><div class="metric-fill" style="width:70%"></div></div></div><div class="metric-val">8 mo</div></div>
+        <div class="metric"><div><div class="metric-label">Repeat / referral clients</div><div class="metric-bar"><div class="metric-fill" style="width:78%"></div></div></div><div class="metric-val">78%</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div>
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Ready to Transform Your Space?</h2>
+      <p class="section-sub">Tell us what you need. We'll get back to you within 48 hours with a custom quote and free site assessment.</p>
+      <div class="contact-info" style="margin-top:40px">
+        <div class="contact-item"><div class="contact-icon">📍</div><div><h4>Service Area</h4><p>All 11 FIFA World Cup host cities + nationwide USA</p></div></div>
+        <div class="contact-item"><div class="contact-icon">🌐</div><div><h4>Languages</h4><p>English · Türkçe · Español</p></div></div>
+        <div class="contact-item"><div class="contact-icon">⚡</div><div><h4>Response Time</h4><p>Within 48 hours — often same day</p></div></div>
+        <div class="contact-item"><div class="contact-icon">🛠️</div><div><h4>Free Assessment</h4><p>No-obligation site visit and custom quote</p></div></div>
+      </div>
+    </div>
+    <div class="form-card">
+      <div id="success-msg"><div style="font-size:48px">✅</div><h3>Request Received!</h3><p>Our team will contact you within 48 hours.</p></div>
+      <div id="formBody">
+        <div class="form-title">Get Your Free Quote</div>
+        <div class="form-sub">Fill in your details and we'll reach out with a custom solution.</div>
+        <div class="form-row">
+          <div class="field"><label>First Name</label><input type="text" id="f-first" placeholder="John"></div>
+          <div class="field"><label>Last Name</label><input type="text" id="f-last" placeholder="Smith"></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" id="f-email" placeholder="john@restaurant.com"></div>
+        <div class="field"><label>Phone</label><input type="tel" id="f-phone" placeholder="+1 (555) 000-0000"></div>
+        <div class="field"><label>Business Type</label>
+          <select id="f-biz"><option value="">Select...</option><option>Restaurant</option><option>Sports Bar</option><option>Retail Store</option><option>Office / Corporate</option><option>Event Venue</option><option>Other</option></select>
+        </div>
+        <div class="field"><label>Service Interested In</label>
+          <select id="f-service"><option value="">Select...</option><option>LED Wall Installation</option><option>VoIP Phone System</option><option>IT Solutions</option><option>Audio Visual</option><option>Multiple Services</option></select>
+        </div>
+        <div class="field"><label>Message (optional)</label><textarea id="f-msg" placeholder="Tell us about your project..."></textarea></div>
+        <button class="submit-btn" onclick="submitLead()">Send Request — It's Free →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo-wrap">
+    <svg width="120" height="30" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="8" width="9" height="9" rx="2" fill="#00E5FF"/>
+      <rect x="11" y="8" width="9" height="9" rx="2" fill="#0066FF" opacity="0.8"/>
+      <rect x="5.5" y="19" width="9" height="9" rx="2" fill="#7B2FFF" opacity="0.7"/>
+      <text x="28" y="25" font-family="Syne,sans-serif" font-weight="800" font-size="18" fill="#F0F2F7" letter-spacing="-0.5">SNS</text>
+      <rect x="70" y="10" width="1" height="16" fill="rgba(255,255,255,0.15)" rx="1"/>
+      <text x="77" y="24" font-family="Syne,sans-serif" font-weight="500" font-size="10.5" fill="#9BA3BC" letter-spacing="1.5">TECHNOLOGY</text>
+    </svg>
+  </div>
+  <p>© 2026 SNS Technology. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact">Privacy</a>
+  </div>
+</footer>
+
+<!-- CHAT FAB -->
+<button id="chat-fab" onclick="toggleChat()">
+  💬
+  <div class="notif" id="chat-notif">1</div>
+</button>
+
+<!-- CHAT WINDOW -->
+<div id="chat-window">
+  <div class="chat-header">
+    <div class="chat-avatar">🤖</div>
+    <div class="chat-header-info"><h4>SNS Assistant</h4><p>● Online — replies instantly</p></div>
+    <div class="chat-lang-btns">
+      <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+      <button class="lang-btn" onclick="setLang('tr',this)">TR</button>
+      <button class="lang-btn" onclick="setLang('es',this)">ES</button>
+    </div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-input-row">
+    <textarea class="chat-input" id="chatInput" placeholder="Type your message..." rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat()}"></textarea>
+    <button class="chat-send" onclick="sendChat()">➤</button>
+  </div>
+</div>
+
+<!-- EXIT POPUP -->
+<div id="lead-popup">
+  <div class="lead-card">
+    <button class="lead-close" onclick="document.getElementById('lead-popup').classList.remove('show')">✕</button>
+    <div class="lead-icon">🎯</div>
+    <div class="lead-title">Before You Go!</div>
+    <div class="lead-sub">Get a <strong>free LED wall assessment</strong> — perfect for World Cup 2026 prep. No obligation.</div>
+    <div class="field"><label>Your Email</label><input type="email" id="exit-email" placeholder="your@email.com"></div>
+    <div class="field"><label>Phone (optional)</label><input type="tel" id="exit-phone" placeholder="+1 (555) 000-0000"></div>
+    <button class="submit-btn" onclick="submitExitLead()" style="margin-top:4px">Claim Free Assessment →</button>
+  </div>
+</div>
+
+<script>
+// LIVE SCORE ANIMATION
+const scores = ['0 — 0','1 — 0','1 — 1','2 — 1','2 — 2','3 — 2'];
+let si = 0;
+setInterval(()=>{ si=(si+1)%scores.length; document.getElementById('scoreDisplay').textContent=scores[si]; },4000);
+
+// CHAT
+let chatLang='en', chatHistory=[], chatOpened=false;
+const SYSTEM=`You are the AI assistant for SNS Technology, a US-based company that installs LED Wall systems, VoIP phone systems, IT solutions, and audio-visual systems. Be friendly, professional, and concise (max 2-3 sentences). Mention FIFA World Cup 2026 (starts June 11 USA) when relevant. Try to capture leads (name, email, phone). Speak Turkish if user writes in Turkish, Spanish if Spanish. End replies with a question.`;
+const GREETINGS={
+  en:{text:"Hi! 👋 I'm the SNS Technology assistant. Interested in LED walls, VoIP systems, IT solutions, or AV systems?",qr:["LED Wall Info","VoIP Systems","World Cup 2026 Offer","Get a Quote"]},
+  tr:{text:"Merhaba! 👋 SNS Technology asistanınım. LED Wall, VoIP, IT çözümleri veya AV sistemler hakkında bilgi almak ister misiniz?",qr:["LED Wall Bilgisi","VoIP Sistemleri","Dünya Kupası Teklifi","Fiyat Al"]},
+  es:{text:"¡Hola! 👋 Soy el asistente de SNS Technology. ¿Le interesa LED Wall, VoIP, IT o AV?",qr:["Info LED Wall","Sistemas VoIP","Oferta Mundial 2026","Obtener Cotización"]}
+};
+function setLang(l,btn){chatLang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('chatInput').placeholder=l==='tr'?'Mesajınızı yazın...':l==='es'?'Escribe tu mensaje...':'Type your message...'}
+function toggleChat(){const w=document.getElementById('chat-window');w.classList.toggle('open');document.getElementById('chat-notif').style.display='none';if(!chatOpened){chatOpened=true;initChat()}}
+function initChat(){const g=GREETINGS[chatLang];addMsg('bot',g.text,g.qr)}
+function addMsg(role,text,qrs){
+  const msgs=document.getElementById('chatMessages');
+  const div=document.createElement('div');div.className='msg '+role;
+  const now=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  div.innerHTML=`<div class="msg-bubble">${text}</div><div class="msg-time">${now}</div>`;
+  if(qrs&&qrs.length){const qr=document.createElement('div');qr.className='quick-replies';qrs.forEach(q=>{const b=document.createElement('button');b.className='qr';b.textContent=q;b.onclick=()=>{sendMessage(q);qr.remove()};qr.appendChild(b)});div.appendChild(qr)}
+  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
+}
+function showTyping(){const msgs=document.getElementById('chatMessages');const div=document.createElement('div');div.className='msg bot';div.id='typing-indicator';div.innerHTML='<div class="msg-bubble"><span class="dot-typing"></span><span class="dot-typing"></span><span class="dot-typing"></span></div>';msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight}
+function removeTyping(){const t=document.getElementById('typing-indicator');if(t)t.remove()}
+async function sendChat(){const input=document.getElementById('chatInput');const text=input.value.trim();if(!text)return;input.value='';sendMessage(text)}
+async function sendMessage(text){
+  addMsg('user',text);chatHistory.push({role:'user',content:text});showTyping();
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:300,system:SYSTEM,messages:chatHistory})});
+    const data=await res.json();const reply=data.content?.[0]?.text||'Sorry, something went wrong.';
+    chatHistory.push({role:'assistant',content:reply});removeTyping();addMsg('bot',reply);
+  }catch(e){removeTyping();addMsg('bot','Sorry, having trouble connecting. Please fill the contact form!')}
+}
+function submitLead(){const first=document.getElementById('f-first').value,email=document.getElementById('f-email').value;if(!first||!email){alert('Please enter your name and email.');return}document.getElementById('formBody').style.display='none';document.getElementById('success-msg').style.display='block'}
+function submitExitLead(){const email=document.getElementById('exit-email').value;if(!email){alert('Please enter your email.');return}document.getElementById('lead-popup').classList.remove('show')}
+
+// EXIT INTENT
+let exitShown=false;
+document.addEventListener('mouseleave',e=>{if(e.clientY<10&&!exitShown){exitShown=true;setTimeout(()=>document.getElementById('lead-popup').classList.add('show'),300)}});
+
+// SCROLL ANIMATIONS
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:0.1});
+document.querySelectorAll('.service-card,.why-item,.metric').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity 0.5s ease, transform 0.5s ease';obs.observe(el)});
+
+// CHAT NOTIF
+setTimeout(()=>{if(!chatOpened)document.getElementById('chat-notif').style.display='flex'},5000);
+</script>
+</body>
+</html>
